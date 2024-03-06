@@ -12,7 +12,7 @@ number:
   # Set the pulse rate of the LED on your meter
   - platform: template
     id: select_pulse_rate
-    name: 'Puls rate - imp/kWh'
+    name: 'Pulse rate - imp/kWh'
     optimistic: true
     mode: box
     min_value: 100
@@ -70,8 +70,8 @@ sensor:
       # Update the sensor with an average every 10th second. See
       # https://github.com/klaasnicolaas/home-assistant-glow/#reduce-the-amount-of-data-the-sensors-produce
       # for more information.
-      #- throttle_average: 10s
-      #- filter_out: NaN
+      - throttle_average: 10s
+      - filter_out: NaN
 
     total:
       name: '${friendly_name} - Total Energy'
@@ -89,8 +89,8 @@ sensor:
         # Update the sensor once per 0.1 kWh consumed, or every 5th minute, whichever happens sooner.
         # See https://github.com/klaasnicolaas/home-assistant-glow/#reduce-the-amount-of-data-the-sensors-produce
         # for more information.
-        #- delta: 0.01
-        #- heartbeat: 300s
+        - delta: 0.01
+        - heartbeat: 300s
 
   # Total day usage
   - platform: total_daily_energy
