@@ -10,7 +10,7 @@ substitutions:
   friendly_name: Home Assistant Glow
   project_version: "4.0.0"
   device_description: "Measure your energy consumption with the pulse LED on your smart meter - ESP32 Generic"
-
+  throttle_average_int: 10s
   # Define the GPIO pins
   pulse_pin: GPIO26
   status_led: GPIO5
